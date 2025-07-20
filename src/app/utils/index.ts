@@ -1,0 +1,1 @@
+export { personalDetails } from './constants';
