@@ -1,4 +1,10 @@
-export const AboutSection = () => {
+import { PersonalInfo } from '@/app/interfaces';
+
+type Props = {
+  personalInfo: PersonalInfo;
+};
+
+export const AboutSection = ({ personalInfo }: Props) => {
   return (
     <section
       id="about"
@@ -19,7 +25,7 @@ export const AboutSection = () => {
         <div>
           <h3 className="text-2xl font-semibold text-blue-400 mb-4">Key Strengths</h3>
           <ul className="space-y-3 text-lg text-gray-300">
-            {resumeData.skills.softSkills.map((strength, index) => (
+            {personalInfo.skills.softSkills.map((strength, index) => (
               <li key={index} className="flex items-start">
                 <svg className="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path

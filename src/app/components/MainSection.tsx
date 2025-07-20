@@ -1,7 +1,11 @@
 import Image from 'next/image';
-import { personalDetails } from '@/app/utils';
+import { PersonalInfo } from '@/app/interfaces';
 
-export const MainSection = () => {
+type Props = {
+  personalInfo: PersonalInfo;
+};
+
+export const MainSection = ({ personalInfo }: Props) => {
   return (
     <section id="hero" className="flex flex-col items-center text-center mb-20 md:mb-32">
       <div className="relative w-50 h-50 rounded-full bg-gray-800 flex items-center justify-center mb-8 overflow-hidden border-4 border-blue-500 shadow-xl">
@@ -13,10 +17,10 @@ export const MainSection = () => {
         />
       </div>
       <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up">
-        Hello, I&apos;m <span className="text-blue-400">{personalDetails.name}</span>.
+        Hey, I&apos;m <span className="text-blue-400">{personalInfo.name}</span>.
       </h1>
       <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-8 animate-fade-in-up delay-200 text-justify text-pretty">
-        {personalDetails.profile}
+        {personalInfo.profile}
       </p>
       <a
         href="#experience"

@@ -1,4 +1,6 @@
-export const personalDetails = {
+import { PersonalInfo } from '@/app/interfaces';
+
+export const personalDetails: PersonalInfo = {
   name: 'Gustavo A. Silva Navarro',
   title: 'Software Engineer',
   profile:
