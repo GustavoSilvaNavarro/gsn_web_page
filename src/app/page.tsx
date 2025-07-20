@@ -6,8 +6,8 @@ import {
   ProfessionalSection,
   EducationSection,
   Footer,
-} from '@/app/components';
-import { personalDetails } from '@/app/utils';
+} from '@/components';
+import { personalDetails } from '@/utils';
 
 export default function Home() {
   return (

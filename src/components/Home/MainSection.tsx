@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { PersonalInfo } from '@/app/interfaces';
+import { PersonalInfo } from '@/interfaces';
 
 type Props = {
   personalInfo: PersonalInfo;

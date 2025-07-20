@@ -1,4 +1,4 @@
-import { PersonalInfo } from '@/app/interfaces';
+import { PersonalInfo } from '@/interfaces';
 
 export const personalDetails: PersonalInfo = {
   name: 'Gustavo A. Silva Navarro',

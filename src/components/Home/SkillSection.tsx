@@ -1,5 +1,5 @@
-import { PersonalInfo } from '@/app/interfaces';
-import { SkillBadge } from '../SkillBadge';
+import { PersonalInfo } from '@/interfaces';
+import { SkillBadge } from '../ui/SkillBadge';
 
 type Props = {
   personalInfo: PersonalInfo;

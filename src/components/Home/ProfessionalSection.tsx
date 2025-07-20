@@ -1,4 +1,4 @@
-import { PersonalInfo } from '@/app/interfaces';
+import { PersonalInfo } from '@/interfaces';
 
 type Props = {
   personalInfo: PersonalInfo;
