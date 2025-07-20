@@ -1,4 +1,6 @@
-export const personalDetails = {
+import { PersonalInfo } from '@/interfaces';
+
+export const personalDetails: PersonalInfo = {
   name: 'Gustavo A. Silva Navarro',
   title: 'Software Engineer',
   profile:
@@ -50,7 +52,7 @@ export const personalDetails = {
         'Developed unit and integration tests using Jest to ensure application reliability and maintainability.',
         'Restructured data models and optimized database queries to improve performance.',
         'Identified and resolved bugs and application breakpoints, increasing system stability.',
-        'Refactored server architecture for modularity and maintainability; implemented centralized error handling.',
+        'Refactored server architecture for modularity and maintainability, implemented centralized error handling.',
       ],
     },
     {
