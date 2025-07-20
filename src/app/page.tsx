@@ -1,4 +1,12 @@
-import { NavBar, MainSection, AboutSection } from '@/app/components';
+import {
+  NavBar,
+  MainSection,
+  AboutSection,
+  SkillSection,
+  ProfessionalSection,
+  EducationSection,
+  Footer,
+} from '@/app/components';
 import { personalDetails } from '@/app/utils';
 
 export default function Home() {
@@ -8,7 +16,11 @@ export default function Home() {
       <main className="container mx-auto px-6 py-24 md:py-32">
         <MainSection personalInfo={personalDetails} />
         <AboutSection personalInfo={personalDetails} />
+        <SkillSection personalInfo={personalDetails} />
+        <ProfessionalSection personalInfo={personalDetails} />
+        <EducationSection personalInfo={personalDetails} />
       </main>
+      <Footer personalInfo={personalDetails} />
     </div>
   );
 }
