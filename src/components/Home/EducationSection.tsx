@@ -8,7 +8,7 @@ export const EducationSection = ({ personalInfo }: Props) => {
   return (
     <section
       id="education"
-      className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in delay-600">
+      className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in-large delay-600">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Education</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {personalInfo.education.map((edu, index) => (

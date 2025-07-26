@@ -8,7 +8,7 @@ export const AboutSection = ({ personalInfo }: Props) => {
   return (
     <section
       id="about"
-      className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in">
+      className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in-large">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">About Me</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>

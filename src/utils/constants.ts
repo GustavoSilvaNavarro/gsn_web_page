@@ -6,15 +6,69 @@ export const personalDetails: PersonalInfo = {
   profile:
     'Full-Stack Software Engineer with strong proficiency in both frontend and backend development. Experienced in building scalable, maintainable systems using TypeScript, Node.js, and Python. Skilled in modern frameworks, API design, and database architecture. Passionate about delivering clean, user-focused applications with high performance and reliability.',
   skills: {
-    languages: ['JavaScript', 'Python', 'TypeScript'],
-    frontend: ['ReactJs', 'Nextjs', 'React Native'],
-    backend: ['Nest.js', 'Express.js', 'Fastify', 'FastAPI'],
-    databases: ['Timescale', 'MySQL', 'Postgres', 'MongoDB', 'Redis'],
-    devops: ['Docker', 'Podman', 'k8s'],
-    messaging: ['NATS', 'GraphQL', 'Websockets'],
-    cloud: ['GCP', 'AWS', 'Terraform'],
-    styling: ['HTML', 'CSS', 'Sass', 'Tailwindcss'],
-    ai: ['Tensorflow', 'Langchain', 'AI agents'],
+    // languages: ['JavaScript', 'Python', 'TypeScript'],
+    // frontend: ['ReactJs', 'Nextjs', 'React Native'],
+    // backend: ['Nest.js', 'Express.js', 'Fastify', 'FastAPI'],
+    // databases: ['Timescale', 'MySQL', 'Postgres', 'MongoDB', 'Redis'],
+    // devops: ['Docker', 'Podman', 'k8s'],
+    // messaging: ['NATS', 'GraphQL', 'Websockets'],
+    // cloud: ['GCP', 'AWS', 'Terraform'],
+    // styling: ['HTML', 'CSS', 'Sass', 'Tailwindcss'],
+    // ai: ['Tensorflow', 'Langchain', 'AI agents'],
+    frontend: [
+      {
+        name: 'TypeScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+      },
+      {
+        name: 'JavaScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+      },
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+      { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+      { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
+      {
+        name: 'TailwindCSS',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+      },
+    ],
+    backend: [
+      { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+      {
+        name: 'Express',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
+      },
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+      { name: 'Django', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg' },
+      {
+        name: 'Spring Boot',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg',
+      },
+      { name: 'Go', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg' },
+    ],
+    databases: [
+      {
+        name: 'PostgreSQL',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
+      },
+      {
+        name: 'MongoDB',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
+      },
+      { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
+      { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg' },
+    ],
+    tools: [
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+      {
+        name: 'Kubernetes',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg',
+      },
+      { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
+      { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
+    ],
     softSkills: [
       'Problem-solver and critical thinker',
       'Quick learner with ability to adapt to new tools and frameworks',

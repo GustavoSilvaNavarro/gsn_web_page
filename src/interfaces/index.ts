@@ -1,1 +1,1 @@
-export type { PersonalInfo } from './personalInfo.interfaces';
+export type { PersonalInfo, Skill } from './personalInfo.interfaces';
