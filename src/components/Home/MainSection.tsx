@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PersonalInfo } from '@/interfaces';
+import { SpringElement } from '@/components/animate-ui/components/spring-element';
 
 type Props = {
   personalInfo: PersonalInfo;
@@ -8,14 +9,19 @@ type Props = {
 export const MainSection = ({ personalInfo }: Props) => {
   return (
     <section id="hero" className="flex flex-col items-center text-center mb-20 md:mb-32">
-      <div className="relative w-50 h-50 rounded-full bg-gray-800 flex items-center justify-center mb-8 overflow-hidden border-4 border-blue-500 shadow-xl">
-        <Image
-          src="/gsn.jpeg"
-          alt="Gustavo Silva Navarro"
-          fill // Fills the parent container
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
+      <SpringElement>
+        <div
+          draggable={false}
+          className="relative w-50 h-50 rounded-full bg-gray-800 flex items-center justify-center mb-8 overflow-hidden border-4 border-blue-500 shadow-xl">
+          <Image
+            draggable={false}
+            src="/gsn.jpeg"
+            alt="Gustavo Silva Navarro"
+            fill // Fills the parent container
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+      </SpringElement>
       <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up-large">
         Hey, I&apos;m <span className="text-blue-400">{personalInfo.name}</span>.
       </h1>
