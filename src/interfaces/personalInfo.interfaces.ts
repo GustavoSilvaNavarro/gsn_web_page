@@ -10,7 +10,7 @@ export type PersonalInfo = {
 
 type Skills = {
   languages: Array<Skill>;
-  cloudDevops: Array<Skill>;
+  cloudAndDevops: Array<Skill>;
   messaging: Array<Skill>;
   monitoring: Array<Skill>;
   styling: Array<Skill>;

@@ -156,11 +156,11 @@ export const personalDetails: PersonalInfo = {
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain-wordmark.svg',
       },
       {
-        name: 'Websocket',
+        name: 'Websockets',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg',
       },
     ],
-    cloudDevops: [
+    cloudAndDevops: [
       {
         name: 'GCP',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original-wordmark.svg',
