@@ -6,7 +6,7 @@ type Props = {
 
 export const Footer = ({ personalInfo }: Props) => {
   return (
-    <footer className="bg-gray-950 py-10 border-t border-gray-800 text-center text-gray-400">
+    <footer className="py-10 text-center bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
       <p>
         &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
       </p>
@@ -15,7 +15,7 @@ export const Footer = ({ personalInfo }: Props) => {
           href={personalInfo.contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path
               fillRule="evenodd"
@@ -27,14 +27,14 @@ export const Footer = ({ personalInfo }: Props) => {
           href={personalInfo.contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
           </svg>
         </a>
         <a
           href={`mailto:${personalInfo.contact.email}`}
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 12.713l-11.75 6.787v-13.5l11.75 6.713zm0 0l11.75-6.787v13.5l-11.75-6.713zm0-3.713l-12 7.026v-14.052l12-7.026 12 7.026v14.052l-12-7.026z"></path>
           </svg>
