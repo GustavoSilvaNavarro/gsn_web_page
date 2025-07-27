@@ -28,7 +28,7 @@ export const SkillGroup = ({ category, skills }: Props) => {
       {/* Category title - hidden initially, shown on hover */}
       <h4
         className={`
-          category-title text-xl font-semibold text-blue-600 dark:text-blue-300 capitalize mb-4
+          category-title text-xl font-thin text-blue-600 dark:text-blue-300 capitalize mb-4
           absolute top-4 left-0 right-0 px-4 transition-opacity duration-500 ease-in-out transform
           ${isHovered ? 'opacity-100 relative translate-y-0 animate-fade-in' : 'opacity-0 -translate-y-2'}
         `}>
