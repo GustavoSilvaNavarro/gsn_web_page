@@ -9,15 +9,16 @@ export type PersonalInfo = {
 };
 
 type Skills = {
-  languages: Array<string>;
-  frontend: Array<string>;
-  backend: Array<string>;
-  databases: Array<string>;
-  devops: Array<string>;
-  messaging: Array<string>;
-  cloud: Array<string>;
-  styling: Array<string>;
-  ai: Array<string>;
+  languages: Array<Skill>;
+  cloudAndDevops: Array<Skill>;
+  messaging: Array<Skill>;
+  monitoring: Array<Skill>;
+  styling: Array<Skill>;
+  frontEnd: Array<Skill>;
+  backEnd: Array<Skill>;
+  databases: Array<Skill>;
+  testing: Array<Skill>;
+  tools: Array<Skill>;
   softSkills: Array<string>;
 };
 
@@ -41,3 +42,5 @@ type Contact = {
   github: string;
   linkedin: string;
 };
+
+export type Skill = { name: string; icon: string };

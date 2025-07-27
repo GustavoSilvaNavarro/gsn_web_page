@@ -8,7 +8,7 @@ export const ProfessionalSection = ({ personalInfo }: Props) => {
   return (
     <section
       id="experience"
-      className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in delay-400">
+      className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in-large delay-400">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Professional Experience</h2>
       <div className="relative border-l-4 border-blue-600 pl-6 md:pl-12">
         {personalInfo.experience.map((job, index) => (

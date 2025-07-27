@@ -16,15 +16,15 @@ export const MainSection = ({ personalInfo }: Props) => {
           style={{ objectFit: 'cover' }}
         />
       </div>
-      <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up">
+      <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up-large">
         Hey, I&apos;m <span className="text-blue-400">{personalInfo.name}</span>.
       </h1>
-      <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-8 animate-fade-in-up delay-200 text-justify text-pretty">
+      <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-8 animate-fade-in-up-large delay-200 text-justify text-pretty">
         {personalInfo.profile}
       </p>
       <a
         href="#experience"
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up delay-400">
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up-large delay-400">
         View My Work
       </a>
     </section>

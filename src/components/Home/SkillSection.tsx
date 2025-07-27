@@ -1,5 +1,5 @@
-import { PersonalInfo } from '@/interfaces';
-import { SkillBadge } from '../ui/SkillBadge';
+import { PersonalInfo, Skill } from '@/interfaces'; // Import PersonalInfo interface
+import { SkillGroup } from '@/components/ui'; // Import SkillGroup component
 
 type Props = {
   personalInfo: PersonalInfo;
@@ -11,20 +11,11 @@ export const SkillSection = ({ personalInfo }: Props) => {
       id="skills"
       className="mb-20 md:mb-32 p-8 bg-gray-900 rounded-xl shadow-xl border border-gray-800 animate-fade-in delay-200">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Technologies & Skills</h2>
-      <div className="space-y-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {Object.entries(personalInfo.skills)
           .filter(([key]) => key !== 'softSkills')
           .map(([category, skills]) => (
-            <div key={category}>
-              <h3 className="text-2xl font-semibold text-blue-400 mb-6 capitalize border-b border-gray-700 pb-3">
-                {category.replace(/([A-Z])/g, ' $1').trim()}
-              </h3>
-              <div className="flex flex-wrap gap-4">
-                {skills.map((skill, index) => (
-                  <SkillBadge key={index} skill={skill} />
-                ))}
-              </div>
-            </div>
+            <SkillGroup key={category} category={category} skills={skills as Array<Skill>} />
           ))}
       </div>
     </section>

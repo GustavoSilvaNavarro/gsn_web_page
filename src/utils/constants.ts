@@ -6,15 +6,245 @@ export const personalDetails: PersonalInfo = {
   profile:
     'Full-Stack Software Engineer with strong proficiency in both frontend and backend development. Experienced in building scalable, maintainable systems using TypeScript, Node.js, and Python. Skilled in modern frameworks, API design, and database architecture. Passionate about delivering clean, user-focused applications with high performance and reliability.',
   skills: {
-    languages: ['JavaScript', 'Python', 'TypeScript'],
-    frontend: ['ReactJs', 'Nextjs', 'React Native'],
-    backend: ['Nest.js', 'Express.js', 'Fastify', 'FastAPI'],
-    databases: ['Timescale', 'MySQL', 'Postgres', 'MongoDB', 'Redis'],
-    devops: ['Docker', 'Podman', 'k8s'],
-    messaging: ['NATS', 'GraphQL', 'Websockets'],
-    cloud: ['GCP', 'AWS', 'Terraform'],
-    styling: ['HTML', 'CSS', 'Sass', 'Tailwindcss'],
-    ai: ['Tensorflow', 'Langchain', 'AI agents'],
+    backEnd: [
+      {
+        name: 'NodeJs',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg',
+      },
+      {
+        name: 'ExpressJs',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg',
+      },
+      { name: 'Fastify', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastify/fastify-plain.svg' },
+      {
+        name: 'NestJs',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original-wordmark.svg',
+      },
+      {
+        name: 'FastAPI',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original-wordmark.svg',
+      },
+      {
+        name: 'Flask',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg',
+      },
+      {
+        name: 'OpenAPI',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original-wordmark.svg',
+      },
+    ],
+    languages: [
+      {
+        name: 'JavaScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+      },
+      {
+        name: 'Python',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
+      },
+      {
+        name: 'TypeScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+      },
+    ],
+    frontEnd: [
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      {
+        name: 'React Router',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original-wordmark.svg',
+      },
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+      { name: 'Redux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg' },
+      {
+        name: 'Angular',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg',
+      },
+      { name: 'rxjs', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rxjs/rxjs-original.svg' },
+      { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+      {
+        name: 'Vite',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
+      },
+      {
+        name: 'Webpack',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original-wordmark.svg',
+      },
+      {
+        name: 'Babel',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/babel/babel-original.svg',
+      },
+      {
+        name: 'Nginx',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg',
+      },
+    ],
+    styling: [
+      { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
+      { name: 'Sass', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg' },
+      {
+        name: 'TailwindCSS',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+      },
+      {
+        name: 'MaterialUI',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg',
+      },
+      {
+        name: 'Bootstrap',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg',
+      },
+    ],
+    databases: [
+      {
+        name: 'PostgreSQL',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg',
+      },
+      {
+        name: 'TimescaleDB',
+        icon: 'https://assets.easydmarc.com/a7196ad14f/bimi-timescale-com-652a126d.svg',
+      },
+      {
+        name: 'MySQL',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg',
+      },
+      {
+        name: 'MariaDB',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg',
+      },
+      {
+        name: 'MongoDB',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg',
+      },
+      {
+        name: 'Firebase',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain-wordmark.svg',
+      },
+      {
+        name: 'Redis',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original-wordmark.svg',
+      },
+      {
+        name: 'Prisma',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original-wordmark.svg',
+      },
+      {
+        name: 'Sequelize',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sequelize/sequelize-original-wordmark.svg',
+      },
+      {
+        name: 'Mongoose',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original-wordmark.svg',
+      },
+    ],
+    testing: [
+      { name: 'Jest', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg' },
+      {
+        name: 'Cypress',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original-wordmark.svg',
+      },
+      { name: 'Vitest', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg' },
+      {
+        name: 'Pytest',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg',
+      },
+      { name: 'Mocha', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mocha/mocha-original.svg' },
+    ],
+    messaging: [
+      { name: 'NATS', icon: 'https://www.vectorlogo.zone/logos/natsio/natsio-icon.svg' },
+      {
+        name: 'GraphQL',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain-wordmark.svg',
+      },
+      {
+        name: 'Websockets',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg',
+      },
+    ],
+    cloudAndDevops: [
+      {
+        name: 'GCP',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original-wordmark.svg',
+      },
+      {
+        name: 'AWS',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+      },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+      {
+        name: 'Kubernetes',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg',
+      },
+      {
+        name: 'ArgoCD',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/argocd/argocd-original-wordmark.svg',
+      },
+      {
+        name: 'Terraform',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original-wordmark.svg',
+      },
+      {
+        name: 'Heroku',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-original-wordmark.svg',
+      },
+      {
+        name: 'Vercel',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg',
+      },
+      {
+        name: 'Podman',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/podman/podman-original-wordmark.svg',
+      },
+    ],
+    tools: [
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg' },
+      {
+        name: 'Github',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg',
+      },
+      {
+        name: 'Vault',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vault/vault-original-wordmark.svg',
+      },
+      {
+        name: 'Numpy',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original-wordmark.svg',
+      },
+      {
+        name: 'Pandas',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg',
+      },
+      {
+        name: 'Github Actions',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg',
+      },
+      { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
+      {
+        name: 'Dbeaver',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg',
+      },
+      {
+        name: 'Postman',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',
+      },
+    ],
+    monitoring: [
+      {
+        name: 'Grafana',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original-wordmark.svg',
+      },
+      {
+        name: 'Prometheus',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-plain-wordmark.svg',
+      },
+      {
+        name: 'Opentelemetry',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opentelemetry/opentelemetry-original-wordmark.svg',
+      },
+      {
+        name: 'Jaeger',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jaegertracing/jaegertracing-original-wordmark.svg',
+      },
+    ],
     softSkills: [
       'Problem-solver and critical thinker',
       'Quick learner with ability to adapt to new tools and frameworks',
