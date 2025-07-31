@@ -1,4 +1,3 @@
-// components/SkillSection.tsx or wherever it's located
 import { PersonalInfo, Skill } from '@/interfaces'; // Import PersonalInfo interface
 import { SkillGroup } from '@/components/ui'; // Import SkillGroup component
 

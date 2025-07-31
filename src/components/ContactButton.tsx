@@ -1,11 +1,12 @@
-// Add this to your main layout or Home component
-
-import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
+'use client';
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Mail } from 'lucide-react'; // Or any icon you prefer
+import { Mail } from 'lucide-react';
 import { useState } from 'react';
 
 export function FloatingContactButton() {
+  const initialForm = { email: '', name: '', subject: '', message: '' };
+  const [formDate, setFormDate] = useState(initialForm);
   const [open, setOpen] = useState(false);
 
   return (
@@ -14,24 +15,47 @@ export function FloatingContactButton() {
         <Button
           variant="default"
           size="icon"
-          className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white w-16 h-16"
+          className="fixed bottom-6 right-6 z-60 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white w-16 h-16"
           aria-label="Contact">
           <Mail className="w-7 h-7" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
-        {/* Replace this with your contact form or email link */}
-        <form
-          className="flex flex-col gap-4"
-          action="https://formspree.io/f/your-form-id" // Replace with your Formspree or backend endpoint
-          method="POST">
-          <input type="email" name="email" placeholder="Your email" required className="input input-bordered" />
-          <textarea name="message" placeholder="Your message" required className="textarea textarea-bordered" />
-          <Button type="submit" className="w-full">
-            Send
-          </Button>
-        </form>
+      <SheetContent side="left" className="max-w-md z-70 w-full">
+        <SheetHeader>
+          <SheetTitle>Contact Me</SheetTitle>
+        </SheetHeader>
+
+        <div>
+          <form>
+            <div>
+              <div>
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="test@gmail.com"
+                  required
+                  className="input input-bordered"
+                />
+              </div>
+              <div>
+                <label>Name</label>
+                <input type="text" name="name" placeholder="John Doe" required className="input input-bordered" />
+              </div>
+            </div>
+            <div>
+              <label>Subject</label>
+              <input type="text" name="subject" placeholder="Subject" required className="input input-bordered" />
+            </div>
+            <div>
+              <label>Subject</label>
+              <textarea name="message" placeholder="Your message..." required className="textarea textarea-bordered" />
+            </div>
+          </form>
+        </div>
+        <SheetFooter>
+          <Button type="submit">Save changes</Button>
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
