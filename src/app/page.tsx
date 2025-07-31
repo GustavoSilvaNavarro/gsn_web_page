@@ -8,6 +8,7 @@ import {
   Footer,
 } from '@/components';
 import { personalDetails } from '@/utils';
+import { FloatingContactButton } from '@/components/ContactButton';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <EducationSection personalInfo={personalDetails} />
       </main>
       <Footer personalInfo={personalDetails} />
+      <FloatingContactButton />
     </div>
   );
 }
