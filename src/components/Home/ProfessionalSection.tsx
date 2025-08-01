@@ -13,7 +13,7 @@ type Props = {
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
 const itemVariants: Variants = {
@@ -26,11 +26,8 @@ export const ProfessionalSection = ({ personalInfo }: Props) => {
   const [ref, inView] = useInView({ threshold: 0.2 });
 
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
+    if (inView) controls.start('visible');
+    else controls.start('hidden');
   }, [controls, inView]);
 
   return (
