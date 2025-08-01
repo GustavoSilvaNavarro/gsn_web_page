@@ -1,22 +1,24 @@
-// components/ui/SkillGroup.tsx or wherever it's located
 'use client';
+
 import { useState } from 'react';
-import { Skill } from '@/interfaces'; // Import the Skill interface
-import { SkillIcon } from './SkillIcon'; // Import the SkillIcon component
+import { motion, type Variants } from 'framer-motion';
+import { Skill } from '@/interfaces';
+import { SkillIcon } from './SkillIcon';
 
 type Props = {
   category: string;
   skills: Array<Skill>;
+  itemVariants: Variants;
 };
 
-export const SkillGroup = ({ category, skills }: Props) => {
+export const SkillGroup = ({ category, skills, itemVariants }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Function to format category names (e.g., "frontEnd" to "Front End")
   const displayCategory = category.replace(/([A-Z])/g, ' $1').trim();
 
   return (
-    <div
+    <motion.div
+      variants={itemVariants}
       className={`
         relative p-4 rounded-xl shadow-md dark:shadow-lg transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
         min-h-[150px] flex flex-col items-center justify-center text-center bg-gray-100 dark:bg-gray-800 border
@@ -25,7 +27,6 @@ export const SkillGroup = ({ category, skills }: Props) => {
       `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
-      {/* Category title - hidden initially, shown on hover */}
       <h4
         className={`
           category-title text-xl font-thin text-blue-600 dark:text-blue-300 capitalize mb-4
@@ -34,8 +35,6 @@ export const SkillGroup = ({ category, skills }: Props) => {
         `}>
         {displayCategory}
       </h4>
-
-      {/* Icons container */}
       <div
         className={`
           icons-container flex flex-wrap justify-center items-center w-full max-h-full overflow-y-auto custom-scrollbar
@@ -46,6 +45,6 @@ export const SkillGroup = ({ category, skills }: Props) => {
           <SkillIcon key={skill.name} skill={skill} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
