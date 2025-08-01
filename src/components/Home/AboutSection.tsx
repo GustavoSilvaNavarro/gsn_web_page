@@ -1,18 +1,68 @@
+'use client';
+
+import { useAnimation, motion } from 'framer-motion';
 import { PersonalInfo } from '@/interfaces';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 type Props = {
   personalInfo: PersonalInfo;
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const leftItemVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      stiffness: 100,
+      damping: 20,
+    },
+  },
+};
+
+const rightItemVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      stiffness: 100,
+      damping: 20,
+    },
+  },
+};
+
 export const AboutSection = ({ personalInfo }: Props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) controls.start('visible');
+    else controls.start('hidden');
+  }, [controls, inView]);
+
   return (
-    <section
+    <motion.section
       id="about"
-      className="mb-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl
-                 border border-gray-200 dark:border-gray-800 animate-fade-in-large">
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={controls}
+      className="mb-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl border border-gray-200 dark:border-gray-800">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">About Me</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
+        <motion.div variants={leftItemVariants}>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             As a Full-Stack Software Engineer, I thrive on building robust and user-centric applications. My expertise
             spans both frontend and backend development, enabling me to craft seamless experiences from database to user
@@ -22,12 +72,12 @@ export const AboutSection = ({ personalInfo }: Props) => {
             I am deeply passionate about delivering high-performance, maintainable, and scalable systems. My approach is
             rooted in clean code principles, modern architectural patterns, and a relentless focus on user satisfaction.
           </p>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div variants={rightItemVariants}>
           <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Key Strengths</h3>
           <ul className="space-y-3 text-lg text-gray-700 dark:text-gray-300">
             {personalInfo.skills.softSkills.map((strength, index) => (
-              <li key={index} className="flex items-start">
+              <motion.li key={index} variants={rightItemVariants} className="flex items-start">
                 <svg
                   className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3 mt-1 flex-shrink-0"
                   fill="currentColor"
@@ -38,11 +88,11 @@ export const AboutSection = ({ personalInfo }: Props) => {
                     clipRule="evenodd"></path>
                 </svg>
                 {strength}
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
