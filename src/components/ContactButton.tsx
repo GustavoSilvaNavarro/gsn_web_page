@@ -1,4 +1,5 @@
 'use client';
+
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/components/ui/sheet';
 import { Form, FormField, FormItem, FormControl, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -8,6 +9,7 @@ import { Mail } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { type FormSchema, contactFormSchema } from '@/schemas/contactMe.dtos';
+import { sendEmail } from '@/utils/sendEmail';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 export function FloatingContactButton() {
@@ -22,8 +24,10 @@ export function FloatingContactButton() {
     },
   });
 
-  const onSubmit = (values: FormSchema) => {
-    console.log(values);
+  const onSubmit = async (values: FormSchema) => {
+    const { name, email, subject, message } = values;
+
+    await sendEmail({ fromEmail: email, message, subject, name });
     setOpen(false);
     form.reset();
   };

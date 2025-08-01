@@ -1,1 +1,2 @@
-export { personalDetails } from './constants';
+export { personalDetails, myEmail } from './constants';
+export { sendEmail } from './sendEmail';

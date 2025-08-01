@@ -1,5 +1,7 @@
 import { PersonalInfo } from '@/interfaces';
 
+export const myEmail = 'gustavo.silva.nav@gmail.com';
+
 export const personalDetails: PersonalInfo = {
   name: 'Gustavo A Silva Navarro',
   title: 'Software Engineer',
