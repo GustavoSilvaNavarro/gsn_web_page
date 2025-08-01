@@ -13,7 +13,7 @@ import { FloatingContactButton } from '@/components/ContactButton';
 export default function Home() {
   return (
     <div className="min-h-screen font-sans antialiased">
-      <NavBar />
+      <NavBar navType="main" />
       <main className="container mx-auto px-6 py-24 md:py-32">
         <MainSection personalInfo={personalDetails} />
         <AboutSection personalInfo={personalDetails} />
