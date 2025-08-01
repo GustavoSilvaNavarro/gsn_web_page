@@ -1,13 +1,32 @@
 'use client';
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/components/ui/sheet';
+import { Form, FormField, FormItem, FormControl, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { type FormSchema, contactFormSchema } from '@/schemas/contactMe.dtos';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 export function FloatingContactButton() {
-  const initialForm = { email: '', name: '', subject: '', message: '' };
-  const [formDate, setFormDate] = useState(initialForm);
   const [open, setOpen] = useState(false);
+  const form = useForm<FormSchema>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+  });
+
+  const onSubmit = (values: FormSchema) => {
+    console.log(values);
+    setOpen(false);
+    form.reset();
+  };
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -20,42 +39,79 @@ export function FloatingContactButton() {
           <Mail className="w-7 h-7" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="max-w-md z-70 w-full">
+      <SheetContent side="left" className="max-w-md z-70 w-full flex flex-col">
         <SheetHeader>
-          <SheetTitle>Contact Me</SheetTitle>
+          <SheetTitle className="text-center font-bold text-2xl">Contact Me</SheetTitle>
         </SheetHeader>
 
-        <div>
-          <form>
-            <div>
-              <div>
-                <label>Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="test@gmail.com"
-                  required
-                  className="input input-bordered"
-                />
-              </div>
-              <div>
-                <label>Name</label>
-                <input type="text" name="name" placeholder="John Doe" required className="input input-bordered" />
-              </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-full px-6 pb-4 space-4">
+            <div className="flex flex-col space-y-4 flex-grow">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="John Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="test@gmail.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Subject</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Subject" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col flex-grow">
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Your message..."
+                        {...field}
+                        className="flex-grow overflow-y-auto resize-none"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
-            <div>
-              <label>Subject</label>
-              <input type="text" name="subject" placeholder="Subject" required className="input input-bordered" />
-            </div>
-            <div>
-              <label>Subject</label>
-              <textarea name="message" placeholder="Your message..." required className="textarea textarea-bordered" />
-            </div>
+
+            <SheetFooter className="mt-auto py-4 px-0">
+              <Button type="submit" className="w-full cursor-pointer">
+                Send Message
+              </Button>
+            </SheetFooter>
           </form>
-        </div>
-        <SheetFooter>
-          <Button type="submit">Save changes</Button>
-        </SheetFooter>
+        </Form>
       </SheetContent>
     </Sheet>
   );
