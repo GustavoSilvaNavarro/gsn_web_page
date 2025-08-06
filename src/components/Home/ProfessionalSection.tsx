@@ -37,7 +37,7 @@ export const ProfessionalSection = ({ personalInfo }: Props) => {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="mb-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl border border-gray-200 dark:border-gray-800">
+      className="mb-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl border border-gray-200 dark:border-gray-800 scroll-mt-[10rem]">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
         Professional Experience
       </h2>
