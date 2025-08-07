@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import {
   type HTMLMotionProps,
   motion,
@@ -9,7 +8,8 @@ import {
   useMotionValue,
   useSpring,
 } from 'framer-motion';
-
+import { useEffect, useState, useCallback } from 'react';
+import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
 type StarLayerProps = HTMLMotionProps<'div'> & {
@@ -21,14 +21,11 @@ type StarLayerProps = HTMLMotionProps<'div'> & {
 
 function generateStars(count: number, starColor: string) {
   const shadows: string[] = [];
-
   for (let i = 0; i < count; i++) {
     const x = Math.floor(Math.random() * 4000) - 2000;
     const y = Math.floor(Math.random() * 4000) - 2000;
-
     shadows.push(`${x}px ${y}px ${starColor}`);
   }
-
   return shadows.join(', ');
 }
 
@@ -40,9 +37,9 @@ function StarLayer({
   className,
   ...props
 }: StarLayerProps) {
-  const [boxShadow, setBoxShadow] = React.useState<string>('');
+  const [boxShadow, setBoxShadow] = useState<string>('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     setBoxShadow(generateStars(count, starColor));
   }, [count, starColor]);
 
@@ -77,7 +74,6 @@ type StarsBackgroundProps = React.ComponentProps<'div'> & {
   factor?: number;
   speed?: number;
   transition?: SpringOptions;
-  starColor?: string;
   pointerEvents?: boolean;
 };
 
@@ -87,17 +83,24 @@ function StarsBackground({
   factor = 0.05,
   speed = 50,
   transition = { stiffness: 50, damping: 20 },
-  starColor = '#fff',
   pointerEvents = true,
   ...props
 }: StarsBackgroundProps) {
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
+
+  const starColor = isDarkMode ? '#fff' : '#4B5563';
+  const backgroundGradient = isDarkMode
+    ? 'bg-[radial-gradient(ellipse_at_bottom,_#262626_0%,_#000_100%)]'
+    : 'bg-[radial-gradient(ellipse_at_bottom,_#F0F4F8_0%,_#E3E8EC_100%)]';
+
   const offsetX = useMotionValue(1);
   const offsetY = useMotionValue(1);
 
   const springX = useSpring(offsetX, transition);
   const springY = useSpring(offsetY, transition);
 
-  const handleMouseMove = React.useCallback(
+  const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
@@ -112,10 +115,7 @@ function StarsBackground({
 
   return (
     <div
-      className={cn(
-        'relative size-full overflow-hidden bg-[radial-gradient(ellipse_at_bottom,_#262626_0%,_#000_100%)]',
-        className,
-      )}
+      className={cn('relative size-full overflow-hidden', backgroundGradient, className)}
       data-slot="stars-background"
       onMouseMove={handleMouseMove}
       {...props}>
