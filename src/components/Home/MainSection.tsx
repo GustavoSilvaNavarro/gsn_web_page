@@ -22,7 +22,7 @@ export const MainSection = ({ personalInfo }: Props) => {
 
       <div className="flex flex-col md:flex-row gap-4 z-10 mt-8">
         <a
-          href="/path/to/your/resume.pdf"
+          href="/Gustavo_Silva_resume.pdf"
           download
           className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-2xl shadow-[0_0_20px_rgba(37,99,235,0.6)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
           Download CV <FaDownload />
