@@ -14,13 +14,18 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans antialiased">
       <NavBar navType="main" />
-      <main className="container mx-auto px-6 py-24 md:py-32">
+
+      <main className="pt-[110px] md:pt-[100px]">
         <MainSection personalInfo={personalDetails} />
-        <AboutSection personalInfo={personalDetails} />
-        <SkillSection personalInfo={personalDetails} />
-        <ProfessionalSection personalInfo={personalDetails} />
-        <EducationSection personalInfo={personalDetails} />
+
+        <div className="container mx-auto px-6 py-6 md:py-12">
+          <AboutSection personalInfo={personalDetails} />
+          <SkillSection personalInfo={personalDetails} />
+          <ProfessionalSection personalInfo={personalDetails} />
+          <EducationSection personalInfo={personalDetails} />
+        </div>
       </main>
+
       <Footer personalInfo={personalDetails} />
       <FloatingContactButton />
     </div>
