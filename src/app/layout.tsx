@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'gsn',
-  description: 'GSN personal website | portfolio.',
+  title: 'Gustavo Silva | Portfolio',
+  description: 'Gustavo Silva personal website | portfolio.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

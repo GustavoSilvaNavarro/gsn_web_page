@@ -1,6 +1,8 @@
 export type PersonalInfo = {
   name: string;
+  shortName: string;
   title: string;
+  headline: string;
   profile: string;
   skills: Skills;
   experience: Array<ExperienceItem>;

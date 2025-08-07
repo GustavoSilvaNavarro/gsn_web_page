@@ -4,7 +4,10 @@ export const myEmail = 'gustavo.silva.nav@gmail.com';
 
 export const personalDetails: PersonalInfo = {
   name: 'Gustavo A Silva Navarro',
+  shortName: 'Gustavo Silva',
   title: 'Software Engineer',
+  headline:
+    'My expertise lies in designing clean, reliable systems from front to back-end, ensuring a seamless user experience.',
   profile:
     'Full-Stack Software Engineer with strong proficiency in both frontend and backend development. Experienced in building scalable, maintainable systems using TypeScript, Node.js, and Python. Skilled in modern frameworks, API design, and database architecture. Passionate about delivering clean, user-focused applications with high performance and reliability.',
   skills: {
