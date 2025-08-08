@@ -12,13 +12,13 @@ export const MainSection = ({ personalInfo }: Props) => {
       id="hero"
       className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-24 min-h-[calc(100vh-110px)] md:min-h-[calc(100vh-100px)]">
       <CoderBackground />
-      <div className="flex flex-col items-center gap-4 mb-8">
+      <div className="flex flex-col items-center gap-4 mb-8 z-20">
         <h1 className="text-4xl md:text-6xl font-semibold max-w-2xl bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500 bg-clip-text text-transparent leading-tight animate-gradient">
           I&#39;m {personalInfo.shortName} - I build powerful, user-centric digital solutions.
         </h1>
       </div>
 
-      <p className="text-lg md:text-xl text-gray-700 dark:text-gray-100 max-w-4xl text-pretty">
+      <p className="text-lg md:text-xl text-gray-700 dark:text-gray-100 max-w-4xl text-pretty z-20">
         {personalInfo.headline}
       </p>
 
