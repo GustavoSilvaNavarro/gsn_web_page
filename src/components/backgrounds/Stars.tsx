@@ -91,7 +91,16 @@ function StarsBackground({
   ...props
 }: StarsBackgroundProps) {
   const { theme } = useTheme();
-  const isDarkMode = theme === 'dark';
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine theme after component has mounted
+  const isDarkMode = mounted
+    ? theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    : false;
 
   const starColor = isDarkMode ? '#fff' : '#4B5563';
   const backgroundGradient = isDarkMode
