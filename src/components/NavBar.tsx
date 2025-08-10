@@ -1,7 +1,10 @@
+'use client'; // This is a client component
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { ModeToggle } from '@/components/ui/toggle/DarkModeToggle';
 import { FaGithub, FaLinkedin, FaBars } from 'react-icons/fa';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const mainPageLinks = [
   { label: 'About', href: '#about' },
@@ -15,6 +18,8 @@ type NavBarProps = {
 };
 
 export const NavBar = ({ navType }: NavBarProps) => {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
     <nav className="fixed w-full z-60 bg-white bg-opacity-90 dark:bg-gray-950 dark:bg-opacity-90 backdrop-blur-sm shadow-md dark:shadow-lg">
       <div className="flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-200 dark:border-gray-800">
@@ -56,7 +61,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
         {/* Mobile Navigation */}
         <div className="flex items-center md:hidden">
           <ModeToggle />
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <button className="ml-4 p-2 text-gray-600 dark:text-gray-300">
                 <FaBars size={24} />
@@ -65,6 +70,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
             <SheetContent side="right" className="z-70 flex flex-col w-[300px] sm:w-[400px]">
               <SheetHeader className="pb-4">
                 <SheetTitle className="text-center">Goose.dev</SheetTitle>
+                <SheetDescription className="sr-only">Portfolio navigation menu</SheetDescription>
               </SheetHeader>
 
               <div className="flex-1 overflow-y-auto px-6">
@@ -72,6 +78,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
                   <div className="flex flex-col space-y-2">
                     <Link
                       href="/"
+                      onClick={() => setIsSheetOpen(false)}
                       className="py-2 px-4 rounded-md text-lg font-bold text-gray-800 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                       Home
                     </Link>
@@ -81,6 +88,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
                           <a
                             key={link.href}
                             href={link.href}
+                            onClick={() => setIsSheetOpen(false)}
                             className="py-2 px-4 rounded-md ml-4 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 text-lg">
                             {link.label}
                           </a>
@@ -90,6 +98,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
                   </div>
                   <Link
                     href={'/challenges'}
+                    onClick={() => setIsSheetOpen(false)}
                     className="py-2 px-4 rounded-md text-lg font-bold text-gray-800 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                     Challenges
                   </Link>

@@ -1,6 +1,14 @@
 'use client';
 
-import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetFooter,
+  SheetDescription,
+} from '@/components/ui/sheet';
 import { Form, FormField, FormItem, FormControl, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -46,6 +54,7 @@ export function FloatingContactButton() {
       <SheetContent side="left" className="max-w-md z-70 w-full flex flex-col">
         <SheetHeader>
           <SheetTitle className="text-center font-bold text-2xl">Contact Me</SheetTitle>
+          <SheetDescription className="sr-only">Send me an email to get in contact.</SheetDescription>
         </SheetHeader>
 
         <Form {...form}>
