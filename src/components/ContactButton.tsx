@@ -38,7 +38,7 @@ export function FloatingContactButton() {
         <Button
           variant="default"
           size="icon"
-          className="fixed bottom-6 right-6 z-60 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white w-16 h-16"
+          className="fixed bottom-8 right-6 z-60 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white w-16 h-16"
           aria-label="Contact">
           <Mail className="w-7 h-7" />
         </Button>
