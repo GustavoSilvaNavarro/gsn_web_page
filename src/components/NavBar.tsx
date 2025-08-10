@@ -27,7 +27,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
           <ul className="flex items-center space-x-6">
             <li>
               <Link
-                href={'/challenges'}
+                href="/challenges"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
                 challenges
               </Link>
@@ -62,15 +62,15 @@ export const NavBar = ({ navType }: NavBarProps) => {
                 <FaBars size={24} />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader>
-                <SheetTitle>GS.dev</SheetTitle>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] px-6">
+              <SheetHeader className="pb-4">
+                <SheetTitle>Goose.dev</SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col space-y-4 py-4">
+              <div className="flex flex-col space-y-4 py-4 border-t border-gray-200 dark:border-gray-800">
                 <div className="flex flex-col space-y-2">
                   <Link
                     href="/"
-                    className="text-lg font-bold text-gray-800 dark:text-gray-50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                    className="py-2 px-4 rounded-md text-lg font-bold text-gray-800 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                     Home
                   </Link>
                   {navType === 'main' && (
@@ -79,7 +79,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
                         <a
                           key={link.href}
                           href={link.href}
-                          className="ml-4 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-lg">
+                          className="py-2 px-4 rounded-md ml-4 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 text-lg">
                           {link.label}
                         </a>
                       ))}
@@ -88,12 +88,12 @@ export const NavBar = ({ navType }: NavBarProps) => {
                 </div>
 
                 <Link
-                  href={'/challenges'}
-                  className="text-lg font-bold text-gray-800 dark:text-gray-50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                  href="/challenges"
+                  className="py-2 px-4 rounded-md text-lg font-bold text-gray-800 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                   Challenges
                 </Link>
 
-                <div className="pt-4 flex space-x-6 justify-center border-t border-gray-200 dark:border-gray-800">
+                <div className="pt-4 mt-2 flex space-x-6 justify-center border-t border-gray-200 dark:border-gray-800">
                   <a
                     href="https://github.com/GustavoSilvaNavarro"
                     target="_blank"
