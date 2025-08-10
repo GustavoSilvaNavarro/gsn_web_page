@@ -62,9 +62,9 @@ export const NavBar = ({ navType }: NavBarProps) => {
                 <FaBars size={24} />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="z-70 flex flex-col w-[300px] sm:w-[400px]">
               <SheetHeader className="pb-4">
-                <SheetTitle>Goose.dev</SheetTitle>
+                <SheetTitle className="text-center">Goose.dev</SheetTitle>
               </SheetHeader>
 
               <div className="flex-1 overflow-y-auto px-6">
