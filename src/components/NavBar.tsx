@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ModeToggle } from '@/components/ui/toggle/DarkModeToggle';
+import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Import the icons
 
 const mainPageLinks = [
   { label: 'About', href: '#about' },
@@ -20,7 +21,7 @@ export const NavBar = ({ navType }: NavBarProps) => {
           GS<span className="text-gray-800 dark:text-gray-100">.dev</span>
         </Link>
         <div className="flex items-center space-x-6">
-          <ul className="flex space-x-6">
+          <ul className="flex items-center space-x-6">
             <li>
               <Link
                 href={'/challenges'}
@@ -29,7 +30,24 @@ export const NavBar = ({ navType }: NavBarProps) => {
               </Link>
             </li>
           </ul>
-          <ModeToggle />
+
+          <div className="flex items-center space-x-4">
+            <a
+              href="https://github.com/GustavoSilvaNavarro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+              <FaGithub size={24} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gustavo-silva-navarro/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+              <FaLinkedin size={24} />
+            </a>
+            <ModeToggle />
+          </div>
         </div>
       </div>
 
