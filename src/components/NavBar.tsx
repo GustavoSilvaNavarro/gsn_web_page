@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ModeToggle } from '@/components/ui/toggle/DarkModeToggle';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Import the icons
+import { FaGithub, FaLinkedin, FaBars } from 'react-icons/fa';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const mainPageLinks = [
   { label: 'About', href: '#about' },
@@ -20,7 +21,8 @@ export const NavBar = ({ navType }: NavBarProps) => {
         <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
           GS<span className="text-gray-800 dark:text-gray-100">.dev</span>
         </Link>
-        <div className="flex items-center space-x-6">
+
+        <div className="hidden md:flex items-center space-x-6">
           <ul className="flex items-center space-x-6">
             <li>
               <Link
@@ -49,10 +51,62 @@ export const NavBar = ({ navType }: NavBarProps) => {
             <ModeToggle />
           </div>
         </div>
+
+        <div className="flex items-center md:hidden">
+          <ModeToggle />
+          <Sheet>
+            <SheetTrigger asChild>
+              <button className="ml-4 p-2 text-gray-600 dark:text-gray-300">
+                <FaBars size={24} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle>GS.dev</SheetTitle>
+                <SheetDescription>Portfolio navigation</SheetDescription>
+              </SheetHeader>
+              <div className="flex flex-col space-y-4 py-4">
+                <Link
+                  href={'/challenges'}
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-lg">
+                  challenges
+                </Link>
+                {navType === 'main' && (
+                  <>
+                    {mainPageLinks.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-lg">
+                        {link.label}
+                      </a>
+                    ))}
+                  </>
+                )}
+                <div className="pt-4 flex space-x-6 justify-center">
+                  <a
+                    href="https://github.com/GustavoSilvaNavarro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                    <FaGithub size={24} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/gustavo-silva-navarro/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                    <FaLinkedin size={24} />
+                  </a>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
 
       {navType === 'main' ? (
-        <div className="flex justify-center py-2 px-6 md:px-12">
+        <div className="hidden md:flex justify-center py-2 px-6 md:px-12">
           <ul className="flex space-x-6">
             {mainPageLinks.map((link) => (
               <li key={link.href}>
