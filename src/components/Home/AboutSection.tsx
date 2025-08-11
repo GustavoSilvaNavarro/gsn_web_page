@@ -4,6 +4,7 @@ import { useAnimation, motion } from 'framer-motion';
 import { PersonalInfo } from '@/interfaces';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 type Props = {
   personalInfo: PersonalInfo;
@@ -63,7 +64,18 @@ export const AboutSection = ({ personalInfo }: Props) => {
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">About Me</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <motion.div variants={leftItemVariants}>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          <div className="w-full h-[400px] relative rounded-xl overflow-hidden">
+            <Image
+              src="/gsn.jpeg"
+              alt="Gustavo Silva"
+              width={1280}
+              height={1237}
+              className="w-full h-full object-cover object-center"
+              priority
+            />
+          </div>
+
+          {/* <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             As a Full-Stack Software Engineer, I thrive on building robust and user-centric applications. My expertise
             spans both frontend and backend development, enabling me to craft seamless experiences from database to user
             interface.
@@ -71,7 +83,7 @@ export const AboutSection = ({ personalInfo }: Props) => {
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             I am deeply passionate about delivering high-performance, maintainable, and scalable systems. My approach is
             rooted in clean code principles, modern architectural patterns, and a relentless focus on user satisfaction.
-          </p>
+          </p> */}
         </motion.div>
         <motion.div variants={rightItemVariants}>
           <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Key Strengths</h3>
