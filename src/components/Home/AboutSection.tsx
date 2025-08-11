@@ -62,9 +62,12 @@ export const AboutSection = ({ personalInfo }: Props) => {
       animate={controls}
       className="mb-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl border border-gray-200 dark:border-gray-800 scroll-mt-[10rem]">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">About Me</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <motion.div variants={leftItemVariants}>
-          <div className="w-full h-[400px] relative rounded-xl overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <motion.div variants={leftItemVariants} className="relative">
+          <motion.div
+            className="w-full h-[400px] relative rounded-xl overflow-hidden cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 10 }}>
             <Image
               src="/gsn.jpeg"
               alt="Gustavo Silva"
@@ -73,18 +76,26 @@ export const AboutSection = ({ personalInfo }: Props) => {
               className="w-full h-full object-cover object-center"
               priority
             />
-          </div>
 
-          {/* <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            As a Full-Stack Software Engineer, I thrive on building robust and user-centric applications. My expertise
-            spans both frontend and backend development, enabling me to craft seamless experiences from database to user
-            interface.
-          </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I am deeply passionate about delivering high-performance, maintainable, and scalable systems. My approach is
-            rooted in clean code principles, modern architectural patterns, and a relentless focus on user satisfaction.
-          </p> */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 bg-blue-700 bg-opacity-80 flex flex-col justify-center items-start text-white p-8 text-left shadow-[0_0_15px_rgba(37,99,235,0.7)] overflow-y-auto">
+              <p className="text-lg leading-relaxed mb-4">
+                As a Full-Stack Software Engineer, I thrive on building robust and user-centric applications. My
+                expertise spans both frontend and backend development, enabling me to craft seamless experiences from
+                database to user interface.
+              </p>
+              <p className="text-lg leading-relaxed">
+                I am deeply passionate about delivering high-performance, maintainable, and scalable systems. My
+                approach is rooted in clean code principles, modern architectural patterns, and a relentless focus on
+                user satisfaction.
+              </p>
+            </motion.div>
+          </motion.div>
         </motion.div>
+
         <motion.div variants={rightItemVariants}>
           <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Key Strengths</h3>
           <ul className="space-y-3 text-lg text-gray-700 dark:text-gray-300">
