@@ -65,7 +65,7 @@ export const AboutSection = ({ personalInfo }: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <motion.div variants={leftItemVariants} className="relative">
           <motion.div
-            className="w-full h-[400px] relative rounded-xl overflow-hidden cursor-pointer"
+            className="w-full h-[350px] relative rounded-xl overflow-hidden cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 400, damping: 10 }}>
             <Image
@@ -81,7 +81,7 @@ export const AboutSection = ({ personalInfo }: Props) => {
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-blue-700 bg-opacity-80 flex flex-col justify-center items-start text-white p-8 text-left shadow-[0_0_15px_rgba(37,99,235,0.7)] overflow-y-auto">
+              className="absolute inset-0 bg-blue-700 bg-opacity-80 flex flex-col p-8 text-white shadow-[0_0_15px_rgba(37,99,235,0.7)] overflow-y-auto items-start text-left">
               <p className="text-lg leading-relaxed mb-4">
                 As a Full-Stack Software Engineer, I thrive on building robust and user-centric applications. My
                 expertise spans both frontend and backend development, enabling me to craft seamless experiences from
