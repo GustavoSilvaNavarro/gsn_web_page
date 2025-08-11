@@ -340,7 +340,21 @@ export const personalDetails: PersonalInfo = {
   ],
   contact: {
     email: 'gustavo.silva.nav@gmail.com',
+    location: 'Woburn, MA',
     github: 'https://github.com/GustavoSilvaNavarro',
     linkedin: 'https://www.linkedin.com/in/gustavo-silva-navarro',
   },
-};
+  footer: {
+    description: 'Always interested in new projects and collaborations.',
+    contact: {
+      email: 'gsnavarro2@gmail.com',
+      phone: '+1 (555) 123-4567',
+      location: 'Woburn, MA',
+    },
+    socialLinks: [
+      { platform: 'GitHub', url: 'https://github.com/GustavoSilvaNavarro', icon: 'mdi:github' },
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/gustavo-silva-navarro', icon: 'mdi:linkedin' },
+    ],
+    services: ['Web Development', 'Mobile Apps', 'Consulting'],
+  },
+} as const;

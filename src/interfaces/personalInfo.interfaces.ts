@@ -8,6 +8,20 @@ export type PersonalInfo = {
   experience: Array<ExperienceItem>;
   education: Array<EducationItem>;
   contact: Contact;
+  footer: {
+    description: string;
+    contact: {
+      email: string;
+      location: string;
+      phone?: string;
+    };
+    socialLinks: Array<{
+      platform: string;
+      url: string;
+      icon: string;
+    }>;
+    services: Array<string>;
+  };
 };
 
 type Skills = {
@@ -43,6 +57,8 @@ type Contact = {
   email: string;
   github: string;
   linkedin: string;
+  location: string;
+  phone?: string;
 };
 
 export type Skill = { name: string; icon: string };

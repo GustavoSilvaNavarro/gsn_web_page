@@ -4,6 +4,7 @@
     "Dbeaver",
     "dtos",
     "EVSE",
+    "iconify",
     "Instituto",
     "Langchain",
     "OCPI",
@@ -14,6 +15,7 @@
     "telematics",
     "Turbomachinery",
     "turbopack",
-    "Universidad"
+    "Universidad",
+    "Woburn"
   ]
 }
