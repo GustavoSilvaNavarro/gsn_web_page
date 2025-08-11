@@ -60,7 +60,7 @@ export const AboutSection = ({ personalInfo }: Props) => {
       variants={containerVariants}
       initial="hidden"
       animate={controls}
-      className="mb-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl border border-gray-200 dark:border-gray-800 scroll-mt-[10rem]">
+      className="my-20 md:mb-32 p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-xl border border-gray-200 dark:border-gray-800 scroll-mt-[10rem]">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">About Me</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <motion.div variants={leftItemVariants} className="relative">

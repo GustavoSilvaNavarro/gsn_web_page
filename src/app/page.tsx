@@ -29,7 +29,7 @@ export default function Home() {
         </StarsBackground>
       </main>
 
-      <Footer personalInfo={personalDetails} />
+      <Footer />
       <FloatingContactButton />
     </div>
   );
