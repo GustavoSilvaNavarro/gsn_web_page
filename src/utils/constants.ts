@@ -1,8 +1,13 @@
 import { PersonalInfo } from '@/interfaces';
 
+export const myEmail = 'gustavo.silva.nav@gmail.com';
+
 export const personalDetails: PersonalInfo = {
-  name: 'Gustavo A. Silva Navarro',
+  name: 'Gustavo A Silva Navarro',
+  shortName: 'Gustavo Silva',
   title: 'Software Engineer',
+  headline:
+    'My expertise lies in designing clean, reliable systems from front to back-end, ensuring a seamless user experience.',
   profile:
     'Full-Stack Software Engineer with strong proficiency in both frontend and backend development. Experienced in building scalable, maintainable systems using TypeScript, Node.js, and Python. Skilled in modern frameworks, API design, and database architecture. Passionate about delivering clean, user-focused applications with high performance and reliability.',
   skills: {
@@ -335,7 +340,21 @@ export const personalDetails: PersonalInfo = {
   ],
   contact: {
     email: 'gustavo.silva.nav@gmail.com',
+    location: 'Woburn, MA',
     github: 'https://github.com/GustavoSilvaNavarro',
     linkedin: 'https://www.linkedin.com/in/gustavo-silva-navarro',
   },
-};
+  footer: {
+    description: 'Always interested in new projects and collaborations.',
+    contact: {
+      email: 'gsnavarro2@gmail.com',
+      phone: '+1 (555) 123-4567',
+      location: 'Woburn, MA',
+    },
+    socialLinks: [
+      { platform: 'GitHub', url: 'https://github.com/GustavoSilvaNavarro', icon: 'mdi:github' },
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/gustavo-silva-navarro', icon: 'mdi:linkedin' },
+    ],
+    services: ['Web Development', 'Mobile Apps', 'Consulting'],
+  },
+} as const;

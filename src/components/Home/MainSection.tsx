@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { PersonalInfo } from '@/interfaces';
+import { FaDownload, FaEye } from 'react-icons/fa';
+import { CoderBackground } from '@/components/backgrounds/CoderBackground';
 
 type Props = {
   personalInfo: PersonalInfo;
@@ -7,26 +8,33 @@ type Props = {
 
 export const MainSection = ({ personalInfo }: Props) => {
   return (
-    <section id="hero" className="flex flex-col items-center text-center mb-20 md:mb-32">
-      <div className="relative w-50 h-50 rounded-full bg-gray-800 flex items-center justify-center mb-8 overflow-hidden border-4 border-blue-500 shadow-xl">
-        <Image
-          src="/gsn.jpeg"
-          alt="Gustavo Silva Navarro"
-          fill // Fills the parent container
-          style={{ objectFit: 'cover' }}
-        />
+    <section
+      id="hero"
+      className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-24 min-h-[calc(100vh-110px)] md:min-h-[calc(100vh-100px)]">
+      <CoderBackground />
+      <div className="flex flex-col items-center gap-4 mb-8 z-20">
+        <h1 className="text-4xl md:text-6xl font-semibold max-w-2xl bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500 bg-clip-text text-transparent leading-tight animate-gradient">
+          {personalInfo.shortName} - building user-centric digital solutions.
+        </h1>
       </div>
-      <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up-large">
-        Hey, I&apos;m <span className="text-blue-400">{personalInfo.name}</span>.
-      </h1>
-      <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-8 animate-fade-in-up-large delay-200 text-justify text-pretty">
-        {personalInfo.profile}
+
+      <p className="text-lg md:text-xl text-gray-700 dark:text-gray-100 max-w-4xl text-pretty z-20">
+        {personalInfo.headline}
       </p>
-      <a
-        href="#experience"
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up-large delay-400">
-        View My Work
-      </a>
+
+      <div className="flex flex-col md:flex-row gap-4 z-10 mt-8">
+        <a
+          href="/Gustavo_Silva_resume.pdf"
+          download
+          className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-2xl shadow-[0_0_20px_rgba(37,99,235,0.6)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+          Download CV <FaDownload />
+        </a>
+        <a
+          href="#experience"
+          className="bg-transparent border-2 border-blue-700 dark:border-blue-700 hover:bg-blue-700 dark:hover:bg-gray-800 text-blue-700 dark:text-gray-100 hover:text-white py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+          View My Work <FaEye />
+        </a>
+      </div>
     </section>
   );
 };
