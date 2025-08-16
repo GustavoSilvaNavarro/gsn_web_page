@@ -1,10 +1,14 @@
 import { NavBar } from '@/components/NavBar';
+import { FunCoderPage } from '@/components/challenges/Challenges';
 
 export default function Challenges() {
   return (
-    <div>
+    <div className="h-screen">
       <NavBar navType="challenges" />
-      <h1>Here is where the challenges would be!!!</h1>
+
+      <main className="mt-16">
+        <FunCoderPage />
+      </main>
     </div>
   );
 }
