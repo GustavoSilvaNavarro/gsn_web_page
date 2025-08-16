@@ -15,13 +15,15 @@ const mainPageLinks = [
 
 type NavBarProps = {
   navType: 'main' | 'challenges';
+  fixedNav: boolean;
 };
 
-export const NavBar = ({ navType }: NavBarProps) => {
+export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-60 bg-white bg-opacity-90 dark:bg-gray-950 dark:bg-opacity-90 backdrop-blur-sm shadow-md dark:shadow-lg">
+    <nav
+      className={`${fixedNav ? 'fixed top-0' : ''} w-full z-60 bg-white bg-opacity-90 dark:bg-gray-950 dark:bg-opacity-90 backdrop-blur-sm shadow-md dark:shadow-lg`}>
       <div className="flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-200 dark:border-gray-800">
         <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
           Goose<span className="text-gray-800 dark:text-gray-100">.dev</span>

@@ -3,10 +3,10 @@ import { FunCoderPage } from '@/components/challenges/Challenges';
 
 export default function Challenges() {
   return (
-    <div className="h-screen">
-      <NavBar navType="challenges" />
+    <div className="h-screen flex flex-col">
+      <NavBar navType="challenges" fixedNav={false} />
 
-      <main className="h-screen pt-20 px-6">
+      <main className="flex-grow">
         <FunCoderPage />
       </main>
     </div>
