@@ -84,11 +84,11 @@ export const FunCoderPage = () => {
   }
 
   return (
-    <div>
+    <div className="flex gap-4">
       <div>
-        <div>Here is the Instructions</div>
-        <div>HERE the code</div>
+        <h1 className="text-2xl font-bold text-white mb-6">Code Challenges 🚀</h1>
       </div>
+      <div>HERE the code</div>
     </div>
   );
 };

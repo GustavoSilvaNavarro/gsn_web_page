@@ -6,7 +6,7 @@ export default function Challenges() {
     <div className="h-screen">
       <NavBar navType="challenges" />
 
-      <main className="mt-16">
+      <main className="h-screen pt-20 px-6">
         <FunCoderPage />
       </main>
     </div>
