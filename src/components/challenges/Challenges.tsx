@@ -103,7 +103,7 @@ export const FunCoderPage = () => {
   };
 
   return (
-    <div className="flex h-full w-screen bg-gray-900 text-white overflow-hidden">
+    <div className="flex h-full w-full bg-gray-900 text-white overflow-hidden">
       <div className="flex-1/3 flex flex-col px-6 py-8 bg-gray-800 border-r border-gray-700 w-[400px]">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold text-white">Code Challenges 🧑‍💻</h1>
@@ -127,7 +127,7 @@ export const FunCoderPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-2/3 flex-col flex-grow">
+      <div className="flex flex-col flex-grow h-full">
         <div className="flex-grow overflow-hidden shadow-lg border-b-2 border-gray-700">
           <Editor
             height="100%"
@@ -135,9 +135,7 @@ export const FunCoderPage = () => {
             theme="vs-dark"
             value={userCode}
             onChange={(value) => setUserCode(value || '')}
-            options={{
-              minimap: { enabled: false },
-            }}
+            options={{ minimap: { enabled: false } }}
           />
         </div>
         <div className="flex-none p-4 bg-gray-800 border-t border-gray-700">
@@ -160,7 +158,7 @@ export const FunCoderPage = () => {
               </Button>
             </div>
           </div>
-          <div className="space-y-2 max-h-40 overflow-y-auto custom-scrollbar">
+          <div className="space-y-2 max-h-40 overflow-y-auto">
             {testResults.length > 0 &&
               testResults.map((result, index) => (
                 <div
