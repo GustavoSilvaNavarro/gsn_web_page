@@ -167,7 +167,7 @@ export const FunCoderPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="space-y-2 max-h-40 overflow-y-auto">
+            <div className="space-y-2 overflow-y-auto">
               {testResults.length > 0 &&
                 testResults.map((result, index) => (
                   <div
