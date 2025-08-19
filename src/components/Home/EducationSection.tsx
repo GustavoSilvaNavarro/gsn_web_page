@@ -42,7 +42,7 @@ export const EducationSection = ({ personalInfo }: Props) => {
         {personalInfo.education.map((edu, index) => (
           <motion.div
             key={index}
-            className="h-full"
+            className="h-full rounded-xl"
             variants={itemVariants}
             whileHover={{
               scale: 1.03,
