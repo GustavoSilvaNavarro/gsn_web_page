@@ -1,4 +1,6 @@
-export const codeChallenges = [
+import type { CodeChallenge } from '@/interfaces';
+
+export const codeChallenges: Array<CodeChallenge> = [
   {
     id: 1,
     title: 'Add Two Numbers',
