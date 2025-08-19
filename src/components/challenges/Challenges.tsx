@@ -4,11 +4,12 @@ import { useState } from 'react';
 import { Nullable } from '@/interfaces';
 import { Editor } from '@monaco-editor/react';
 import { codeChallenges } from '@/utils';
-import { ChevronRight, Check, X } from 'lucide-react';
+import { ChevronRight, Check, X } from 'lucide-react'; // Import icons for the theme toggle
 import { cn } from '@/lib/utils';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
+import { useTheme } from 'next-themes'; // Import the useTheme hook
 
 type Primitive = string | number | boolean;
 type InputValue = Primitive | Array<Primitive>;
@@ -22,6 +23,7 @@ type TestResults = {
 };
 
 export const FunCoderPage = () => {
+  const { theme } = useTheme(); // Use the hook to get/set the theme
   const [activeChallengeId, setActiveChallengeId] = useState<number>(1);
   const [userCode, setUserCode] = useState<string>(codeChallenges[0].defaultCode);
   const [testResults, setTestResults] = useState<Array<TestResults>>([]);
@@ -32,7 +34,7 @@ export const FunCoderPage = () => {
 
   if (!activeChallenge) {
     return (
-      <div className="flex items-center justify-center h-full text-white">
+      <div className="flex items-center justify-center h-full text-white dark:text-gray-200">
         <h1 className="text-3xl font-bold">All challenges completed! 🎉</h1>
       </div>
     );
@@ -104,8 +106,8 @@ export const FunCoderPage = () => {
   };
 
   return (
-    <div className="flex h-full w-full bg-gray-900 text-white overflow-hidden">
-      <div className="flex-1/3 flex flex-col px-6 py-8 bg-gray-800 border-r border-gray-700 w-[400px]">
+    <div className="flex h-full w-full bg-gray-900 dark:bg-gray-950 text-white dark:text-gray-50 overflow-hidden">
+      <div className="flex-1/3 flex flex-col px-6 py-8 bg-gray-800 dark:bg-gray-900 border-r border-gray-700 dark:border-gray-800 w-[400px]">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold text-white">Code Challenges 🧑‍💻</h1>
           <span className="text-sm text-gray-400">
@@ -113,11 +115,11 @@ export const FunCoderPage = () => {
           </span>
         </div>
         <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
-          <h2 className="text-2xl font-semibold text-white mb-2">{activeChallenge?.title}</h2>
-          <p className="text-justify font-light text-gray-300">{activeChallenge.description}</p>
+          <h2 className="text-2xl font-semibold text-white dark:text-gray-50 mb-2">{activeChallenge?.title}</h2>
+          <p className="text-justify font-light text-gray-300 dark:text-gray-400">{activeChallenge.description}</p>
           <div className="mt-6">
             <h3 className="text-xl font-semibold mb-2">Test Cases</h3>
-            <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+            <ul className="list-disc pl-5 text-sm text-gray-300 dark:text-gray-400 space-y-1">
               {activeChallenge.testCases.map((test, index) => (
                 <li key={index}>
                   Input: <code>{JSON.stringify(test.input)}</code>, Expected:{' '}
@@ -128,13 +130,14 @@ export const FunCoderPage = () => {
           </div>
         </div>
       </div>
+
       <PanelGroup direction="vertical" className="flex-grow h-full">
         <Panel defaultSize={75} minSize={20}>
-          <div className="h-full w-full overflow-hidden shadow-lg border-b-2 border-gray-700">
+          <div className="h-full w-full overflow-hidden shadow-lg border-b-2 border-gray-700 dark:border-gray-800">
             <Editor
               height="100%"
               defaultLanguage="javascript"
-              theme="vs-dark"
+              theme={theme === 'dark' ? 'vs-dark' : 'vs-light'} // Set Monaco editor theme based on app theme
               value={userCode}
               onChange={(value) => setUserCode(value || '')}
               options={{ minimap: { enabled: false } }}
@@ -142,14 +145,14 @@ export const FunCoderPage = () => {
           </div>
         </Panel>
 
-        <PanelResizeHandle className="h-2 w-full flex items-center justify-center bg-gray-800 hover:bg-gray-700 cursor-ns-resize">
+        <PanelResizeHandle className="h-2 w-full flex items-center justify-center bg-gray-800 dark:bg-gray-900 hover:bg-gray-700 dark:hover:bg-gray-800 cursor-ns-resize">
           <div className="h-1 w-10 rounded-full bg-gray-500 hover:bg-gray-400" />
         </PanelResizeHandle>
 
         <Panel>
-          <div className="p-4 bg-gray-800 border-t border-gray-700 h-full overflow-y-auto custom-scrollbar">
+          <div className="p-4 bg-gray-800 dark:bg-gray-900 border-t border-gray-700 dark:border-gray-800 h-full overflow-y-auto custom-scrollbar">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-semibold">Output & Test Results</h3>
+              <h3 className="text-xl font-semibold text-white dark:text-gray-50">Output & Test Results</h3>
               <div className="flex gap-4">
                 <Button onClick={handleRunTests} className="bg-blue-600 hover:bg-blue-700 text-white font-bold">
                   Run Tests
@@ -182,7 +185,7 @@ export const FunCoderPage = () => {
                       <X size={20} className="text-red-500" />
                     )}
                     <div className="flex flex-col text-sm">
-                      <p>
+                      <p className="text-white dark:text-gray-50">
                         <strong>Test Case {index + 1}:</strong>
                       </p>
                       <p className="text-gray-400">
@@ -203,12 +206,11 @@ export const FunCoderPage = () => {
         </Panel>
       </PanelGroup>
 
-      {/* The Dialog component */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px] bg-gray-800 dark:bg-gray-900 text-white dark:text-gray-50">
           <DialogHeader className="text-center">
             <DialogTitle className="text-3xl font-bold text-green-400">Congratulations! 🎉</DialogTitle>
-            <DialogDescription className="text-lg text-gray-400">
+            <DialogDescription className="text-lg text-gray-400 dark:text-gray-500">
               You&apos;ve successfully completed the &quot;{activeChallenge?.title}&quot; challenge.
             </DialogDescription>
           </DialogHeader>
