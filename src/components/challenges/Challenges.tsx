@@ -13,7 +13,7 @@ import { BottomResultsPanel } from './BottomResultsPanel';
 
 export const FunCoderPage = () => {
   const [activeChallengeId, setActiveChallengeId] = useState<number>(1);
-  const [userCode, setUserCode] = useState<string>(codeChallenges[0].defaultCode);
+  const [userCode, setUserCode] = useState<string>(codeChallenges[0].starterCode);
   const [testResults, setTestResults] = useState<Array<TestResults>>([]);
   const [isAllTestsPassed, setIsAllTestsPassed] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,7 +86,7 @@ export const FunCoderPage = () => {
     const nextChallenge = codeChallenges.find((c) => c.id === activeChallengeId + 1);
     if (nextChallenge) {
       setActiveChallengeId(nextChallenge.id);
-      setUserCode(nextChallenge.defaultCode);
+      setUserCode(nextChallenge.starterCode);
       setTestResults([]);
       setIsAllTestsPassed(false);
       setIsModalOpen(false);

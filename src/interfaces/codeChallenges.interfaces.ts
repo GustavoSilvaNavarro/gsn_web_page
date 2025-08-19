@@ -16,6 +16,7 @@ export type CodeChallenge = {
   description: string;
   functionName: string;
   defaultCode: string;
+  starterCode: string;
   testCases: Array<TestCase>;
 };
 
