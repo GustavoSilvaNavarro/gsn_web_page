@@ -42,6 +42,7 @@ export const FunCoderPage = () => {
 
   const handleRunTests = () => {
     try {
+      // We'll wrap the user's code in a try/catch block to handle syntax errors.
       const userFunction = new Function(`return ${userCode}`)();
       const newResults: Array<TestResults> = [];
       let allPassed = true;
@@ -54,6 +55,7 @@ export const FunCoderPage = () => {
         const expected = testCase.expected;
 
         try {
+          // Dynamically call the user's function with spread input arguments
           actual = userFunction(...input);
           passed = JSON.stringify(actual) === JSON.stringify(expected);
         } catch (err) {
