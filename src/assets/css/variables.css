@@ -43,7 +43,8 @@
   --color-gsn-funcoder-text-primary: var(--gsn-funcoder-text-primary);
   --color-gsn-funcoder-text-muted: var(--gsn-funcoder-text-muted);
   --color-gsn-funcoder-primary: var(--gsn-funcoder-primary);
-  --color-gsn-funcoder-primary-hover: var(--gsn-funcoder-primary-hover);
+  --color-gsn-funcoder-primary-btn: var(--gsn-funcoder-primary-btn);
+  --color-gsn-funcoder-primary-btn-hover: var(--gsn-funcoder-primary-btn-hover);
   --color-gsn-funcoder-primary-foreground: var(--gsn-funcoder-primary-foreground);
   --color-gsn-funcoder-success: var(--gsn-funcoder-success);
   --color-gsn-funcoder-success-hover: var(--gsn-funcoder-success-hover);
@@ -89,21 +90,22 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 
   /* FunCoder Light Theme Colors */
-  --gsn-funcoder-main-bg: rgb(240, 248, 255);
-  --gsn-funcoder-panel-bg: rgb(16, 136, 255);
-  --gsn-funcoder-panel-border: rgba(255, 255, 255, 0.3);
-  --gsn-funcoder-text-primary: rgb(255, 255, 255);
-  --gsn-funcoder-text-muted: rgb(220, 220, 220);
-  --gsn-funcoder-primary: rgb(16, 136, 255);
-  --gsn-funcoder-primary-hover: rgb(10, 110, 230);
+  --gsn-funcoder-main-bg: rgb(245, 246, 247);
+  --gsn-funcoder-panel-bg: rgb(230, 232, 235);
+  --gsn-funcoder-panel-border: rgb(200, 204, 209);
+  --gsn-funcoder-text-primary: rgb(31, 41, 55);
+  --gsn-funcoder-text-muted: rgb(107, 114, 128);
+  --gsn-funcoder-primary: rgb(37, 99, 235);
+  --gsn-funcoder-primary-btn: rgb(37, 99, 235);
+  --gsn-funcoder-primary-btn-hover: rgb(29, 78, 216);
   --gsn-funcoder-primary-foreground: rgb(255, 255, 255);
   --gsn-funcoder-success: rgb(52, 211, 153);
   --gsn-funcoder-success-hover: rgb(34, 197, 94);
   --gsn-funcoder-danger: rgb(239, 68, 68);
   --gsn-funcoder-danger-hover: rgb(220, 38, 38);
-  --gsn-funcoder-status-success: rgba(52, 211, 153, 0.2);
-  --gsn-funcoder-status-danger: rgba(239, 68, 68, 0.2);
-  --gsn-funcoder-resize-handle-bg: rgba(255, 255, 255, 0.5);
+  --gsn-funcoder-status-success: rgb(21, 128, 61, 0.1);
+  --gsn-funcoder-status-danger: rgb(170, 30, 30, 0.2);
+  --gsn-funcoder-resize-handle-bg: rgba(156, 163, 175, 0.5);
 }
 
 .dark {
@@ -145,8 +147,9 @@
   --gsn-funcoder-panel-border: rgb(55 65 81);
   --gsn-funcoder-text-primary: rgb(255 255 255);
   --gsn-funcoder-text-muted: rgb(156 163 175);
-  --gsn-funcoder-primary: rgb(37 99 235);
-  --gsn-funcoder-primary-hover: rgb(29 78 216);
+  --gsn-funcoder-primary: rgb(80,162,255);
+  --gsn-funcoder-primary-btn: rgb(37 99 235);
+  --gsn-funcoder-primary-btn-hover: rgb(29 78 216);
   --gsn-funcoder-primary-foreground: rgb(255 255 255);
   --gsn-funcoder-success: rgb(22 163 74);
   --gsn-funcoder-success-hover: rgb(21 128 61);

@@ -30,7 +30,7 @@ export const BottomResultsPanel = ({
             <Button
               onClick={handleRunTests}
               disabled={isTesting} // Use isTesting to disable the button
-              className="bg-gsn-funcoder-primary hover:bg-gsn-funcoder-primary-hover text-gsn-funcoder-primary-foreground font-bold">
+              className="bg-gsn-funcoder-primary-btn hover:bg-gsn-funcoder-primary-btn-hover cursor-pointer text-gsn-funcoder-primary-foreground font-bold">
               {isTesting ? (
                 <span className="flex items-center">
                   <Loader2 size={20} className="mr-2 animate-spin" />

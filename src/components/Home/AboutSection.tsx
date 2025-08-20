@@ -82,12 +82,12 @@ export const AboutSection = ({ personalInfo }: Props) => {
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
               className="absolute inset-0 bg-blue-700 bg-opacity-80 flex flex-col p-8 text-white shadow-[0_0_15px_rgba(37,99,235,0.7)] overflow-y-auto items-start text-left">
-              <p className="text-lg leading-relaxed mb-4">
+              <p className="text-justify text-lg leading-relaxed mb-4">
                 As a Full-Stack Software Engineer, I thrive on building robust and user-centric applications. My
                 expertise spans both frontend and backend development, enabling me to craft seamless experiences from
                 database to user interface.
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 I am deeply passionate about delivering high-performance, maintainable, and scalable systems. My
                 approach is rooted in clean code principles, modern architectural patterns, and a relentless focus on
                 user satisfaction.

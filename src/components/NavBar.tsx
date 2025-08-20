@@ -26,7 +26,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
       className={`${fixedNav ? 'fixed top-0' : ''} w-full z-60 bg-white bg-opacity-90 dark:bg-gray-950 dark:bg-opacity-90 backdrop-blur-sm shadow-md dark:shadow-lg`}>
       <div className="flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-200 dark:border-gray-800">
         <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-          Goose<span className="text-gray-800 dark:text-gray-100">.dev</span>
+          Goose<span className="text-black dark:text-gray-100">.dev</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -35,7 +35,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
             <li>
               <Link
                 href="/challenges"
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                className="text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
                 challenges
               </Link>
             </li>
@@ -46,14 +46,14 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
               href="https://github.com/GustavoSilvaNavarro"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+              className="text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
               <FaGithub size={24} />
             </a>
             <a
               href="https://www.linkedin.com/in/gustavo-silva-navarro/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+              className="text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
               <FaLinkedin size={24} />
             </a>
             <ModeToggle />
@@ -65,7 +65,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
           <ModeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <button className="ml-4 p-2 text-gray-600 dark:text-gray-300">
+              <button className="ml-4 p-2 text-black dark:text-white">
                 <FaBars size={24} />
               </button>
             </SheetTrigger>
@@ -81,7 +81,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
                     <Link
                       href="/"
                       onClick={() => setIsSheetOpen(false)}
-                      className="py-2 px-4 rounded-md text-lg font-bold text-gray-800 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
+                      className="py-2 px-4 rounded-md text-lg font-bold text-black dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                       Home
                     </Link>
                     {navType === 'main' && (
@@ -91,7 +91,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
                             key={link.href}
                             href={link.href}
                             onClick={() => setIsSheetOpen(false)}
-                            className="py-2 px-4 rounded-md ml-4 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 text-lg">
+                            className="py-2 px-4 rounded-md ml-4 text-black dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 text-lg">
                             {link.label}
                           </a>
                         ))}
@@ -101,7 +101,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
                   <Link
                     href={'/challenges'}
                     onClick={() => setIsSheetOpen(false)}
-                    className="py-2 px-4 rounded-md text-lg font-bold text-gray-800 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
+                    className="py-2 px-4 rounded-md text-lg font-bold text-black dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                     Challenges
                   </Link>
                 </div>
@@ -112,14 +112,14 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
                   href="https://github.com/GustavoSilvaNavarro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                  className="text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
                   <FaGithub size={24} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/gustavo-silva-navarro/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                  className="text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
                   <FaLinkedin size={24} />
                 </a>
               </div>
@@ -135,7 +135,7 @@ export const NavBar = ({ navType, fixedNav }: NavBarProps) => {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                  className="text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
                   {link.label}
                 </a>
               </li>
