@@ -23,8 +23,8 @@ export const BottomResultsPanel = ({
 }: Props) => {
   return (
     <Panel>
-      <div className="p-4 bg-gsn-funcoder-panel-bg border-t border-gsn-funcoder-panel-border h-full overflow-y-auto custom-scrollbar">
-        <div className="flex justify-between items-center mb-4">
+      <div className="p-4 bg-gsn-funcoder-panel-bg border-gsn-funcoder-panel-border h-full overflow-y-auto custom-scrollbar">
+        <div className="flex justify-between items-center pb-4 mb-4 border-b-2">
           <h3 className="text-xl font-semibold text-gsn-funcoder-text-primary">Output & Test Results</h3>
           <div className="flex gap-4">
             <Button
@@ -45,7 +45,7 @@ export const BottomResultsPanel = ({
               disabled={!isAllTestsPassed}
               className={cn(
                 isAllTestsPassed
-                  ? 'bg-gsn-funcoder-success hover:bg-gsn-funcoder-success-hover text-gsn-funcoder-primary-foreground'
+                  ? 'cursor-pointer bg-gsn-funcoder-success hover:bg-gsn-funcoder-success-hover text-gsn-funcoder-primary-foreground'
                   : 'bg-gsn-funcoder-panel-border text-gsn-funcoder-text-muted cursor-not-allowed',
               )}>
               Next Challenge
@@ -71,13 +71,13 @@ export const BottomResultsPanel = ({
                   <p className="text-gsn-funcoder-text-primary">
                     <strong>Test Case {index + 1}:</strong>
                   </p>
-                  <p className="text-gsn-funcoder-text-muted">
+                  <p className="font-light text-gsn-funcoder-text-basic">
                     Input: <code>{JSON.stringify(result.input)}</code>
                   </p>
-                  <p className="text-gsn-funcoder-text-muted">
+                  <p className="font-light  text-gsn-funcoder-text-basic">
                     Expected: <code>{JSON.stringify(result.expected)}</code>
                   </p>
-                  <p className="text-gsn-funcoder-text-muted">
+                  <p className="font-light text-gsn-funcoder-text-basic">
                     Actual: <code>{JSON.stringify(result.actual)}</code>
                   </p>
                   {!result.passed && result.error && (

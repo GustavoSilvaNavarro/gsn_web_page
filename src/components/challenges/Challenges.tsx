@@ -89,7 +89,7 @@ export const FunCoderPage = () => {
       <PanelGroup direction="vertical" className="flex-grow h-full">
         <CodeEditor userCode={userCode} setUserCode={setUserCode} />
 
-        <PanelResizeHandle className="h-2 w-full flex items-center justify-center bg-gsn-funcoder-panel-bg hover:bg-gsn-funcoder-panel-border cursor-ns-resize">
+        <PanelResizeHandle className="h-2 w-full flex items-center justify-center bg-gsn-funcoder-panel-bg hover:bg-gsn-funcoder-panel-bg cursor-ns-resize">
           <div className="h-1 w-10 rounded-full bg-gsn-funcoder-resize-handle-bg hover:bg-gsn-funcoder-text-primary" />
         </PanelResizeHandle>
 
@@ -113,7 +113,7 @@ export const FunCoderPage = () => {
           <div className="flex justify-center mt-4">
             <Button
               onClick={handleNextChallenge}
-              className="bg-gsn-funcoder-success hover:bg-gsn-funcoder-success-hover text-gsn-funcoder-primary-foreground font-bold">
+              className="cursor-pointer bg-gsn-funcoder-success hover:bg-gsn-funcoder-success-hover text-gsn-funcoder-primary-foreground font-bold">
               Go to Next Challenge
               <ChevronRight size={20} className="ml-2" />
             </Button>

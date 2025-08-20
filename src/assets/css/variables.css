@@ -53,6 +53,7 @@
   --color-gsn-funcoder-status-success: var(--gsn-funcoder-status-success);
   --color-gsn-funcoder-status-danger: var(--gsn-funcoder-status-danger);
   --color-gsn-funcoder-resize-handle-bg: var(--gsn-funcoder-resize-handle-bg);
+  --color-gsn-funcoder-text-basic: var(--gsn-funcoder-text-basic)
 }
 
 :root {
@@ -90,8 +91,8 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 
   /* FunCoder Light Theme Colors */
-  --gsn-funcoder-main-bg: rgb(245, 246, 247);
-  --gsn-funcoder-panel-bg: rgb(230, 232, 235);
+  --gsn-funcoder-main-bg: rgb(249,249,254);
+  --gsn-funcoder-panel-bg: rgb(249,249,254);
   --gsn-funcoder-panel-border: rgb(200, 204, 209);
   --gsn-funcoder-text-primary: rgb(31, 41, 55);
   --gsn-funcoder-text-muted: rgb(107, 114, 128);
@@ -106,6 +107,7 @@
   --gsn-funcoder-status-success: rgb(21, 128, 61, 0.1);
   --gsn-funcoder-status-danger: rgb(170, 30, 30, 0.2);
   --gsn-funcoder-resize-handle-bg: rgba(156, 163, 175, 0.5);
+  --gsn-funcoder-text-basic: rgb(0, 0, 0);
 }
 
 .dark {
@@ -157,4 +159,5 @@
   --gsn-funcoder-danger-hover: rgb(220 38 38);
   --gsn-funcoder-status-success: rgb(22 101 52 / 20%);
   --gsn-funcoder-status-danger: rgb(153 27 27 / 20%);
+  --gsn-funcoder-text-basic: rgb(255, 255, 255);
 }

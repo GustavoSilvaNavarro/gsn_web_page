@@ -23,7 +23,23 @@ export const CodeEditor = ({ userCode, setUserCode }: Props) => {
           theme={theme === 'dark' ? 'vs-dark' : 'vs-light'}
           value={userCode}
           onChange={(value) => setUserCode(value || '')}
-          options={{ minimap: { enabled: false } }}
+          options={{
+            minimap: { enabled: false },
+            fontSize: 15,
+            fontLigatures: true,
+            folding: true,
+            scrollbar: {
+              useShadows: false, // Removes the scrollbar shadows for a cleaner look
+              vertical: 'auto',
+              horizontal: 'auto',
+              verticalScrollbarSize: 8,
+              horizontalScrollbarSize: 8,
+              arrowSize: 0,
+            },
+            lineNumbers: 'on',
+            renderValidationDecorations: 'on',
+            readOnly: false,
+          }}
         />
       </div>
     </Panel>
