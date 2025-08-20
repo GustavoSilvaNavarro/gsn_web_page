@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { TestResults } from '@/interfaces';
 import { codeChallenges } from '@/utils';
 import { ChevronRight } from 'lucide-react';
@@ -11,75 +11,56 @@ import { CodeTaskDetails } from './CodeTaskDetails';
 import { CodeEditor } from './CodeEditor';
 import { BottomResultsPanel } from './BottomResultsPanel';
 
+let testWorker: Worker | null = null;
+
 export const FunCoderPage = () => {
   const [activeChallengeId, setActiveChallengeId] = useState<number>(1);
   const [userCode, setUserCode] = useState<string>(codeChallenges[0].starterCode);
   const [testResults, setTestResults] = useState<Array<TestResults>>([]);
   const [isAllTestsPassed, setIsAllTestsPassed] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTesting, setIsTesting] = useState(false);
 
   const activeChallenge = codeChallenges.find((c) => c.id === activeChallengeId);
 
-  if (!activeChallenge) {
-    return (
-      <div className="flex items-center justify-center h-full bg-gsn-funcoder-main-bg text-gsn-funcoder-text-primary">
-        <h1 className="text-3xl font-bold">All challenges completed! 🎉</h1>
-      </div>
-    );
-  }
+  useEffect(() => {
+    // Create the worker instance only once when the component mounts
+    if (!testWorker) {
+      testWorker = new Worker(new URL('@/workers/test-runner.worker.ts', import.meta.url));
+    }
+
+    // Clean up the worker when the component unmounts to prevent memory leaks
+    return () => {
+      if (testWorker) {
+        testWorker.terminate();
+        testWorker = null;
+      }
+    };
+  }, []);
 
   const handleRunTests = () => {
-    try {
-      // We'll wrap the user's code in a try/catch block to handle syntax errors.
-      const userFunction = new Function(`return ${userCode}`)();
-      const newResults: Array<TestResults> = [];
-      let allPassed = true;
+    if (!testWorker || !activeChallenge) return;
 
-      activeChallenge.testCases.forEach((testCase) => {
-        let passed = false;
-        let actual = null;
-        let error = null;
-        const input = testCase.input;
-        const expected = testCase.expected;
+    setIsTesting(true);
+    setTestResults([]);
 
-        try {
-          // Dynamically call the user's function with spread input arguments
-          actual = userFunction(...input);
-          passed = JSON.stringify(actual) === JSON.stringify(expected);
-        } catch (err) {
-          error = (err as Error)?.message ?? 'Error running the tests';
-          passed = false;
-        }
-
-        if (!passed) {
-          allPassed = false;
-        }
-
-        newResults.push({
-          input: input,
-          expected: expected,
-          actual: actual,
-          passed: passed,
-          error: error,
-        });
-      });
-
+    // Set up the listener for messages from the worker
+    testWorker.onmessage = (event) => {
+      const { newResults, allPassed } = event.data;
       setTestResults(newResults);
       setIsAllTestsPassed(allPassed);
+      setIsTesting(false);
 
       if (allPassed) {
         setIsModalOpen(true);
       }
-    } catch (err) {
-      console.error(err);
-      setIsAllTestsPassed(false);
-      setTestResults([
-        {
-          error: `Error in function declaration: ${(err as Error)?.message ?? err}`,
-          passed: false,
-        },
-      ]);
-    }
+    };
+
+    // Post the necessary data to the worker to start the tests
+    testWorker.postMessage({
+      userCode: userCode,
+      testCases: activeChallenge.testCases,
+    });
   };
 
   const handleNextChallenge = () => {
@@ -92,6 +73,14 @@ export const FunCoderPage = () => {
       setIsModalOpen(false);
     }
   };
+
+  if (!activeChallenge) {
+    return (
+      <div className="flex items-center justify-center h-full bg-gsn-funcoder-main-bg text-gsn-funcoder-text-primary">
+        <h1 className="text-3xl font-bold">All challenges completed! 🎉</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-full w-full bg-gsn-funcoder-main-bg text-gsn-funcoder-text-primary overflow-hidden">
@@ -108,6 +97,7 @@ export const FunCoderPage = () => {
           testResults={testResults}
           isAllTestsPassed={isAllTestsPassed}
           handleRunTests={handleRunTests}
+          isTesting={isTesting}
           handleNextChallenge={handleNextChallenge}
         />
       </PanelGroup>

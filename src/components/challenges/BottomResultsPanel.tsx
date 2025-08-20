@@ -2,7 +2,7 @@
 
 import { Panel } from 'react-resizable-panels';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Check, X } from 'lucide-react';
+import { ChevronRight, Check, X, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { TestResults } from '@/interfaces';
 
@@ -11,9 +11,16 @@ type Props = {
   isAllTestsPassed: boolean;
   handleNextChallenge: () => void;
   handleRunTests: () => void;
+  isTesting: boolean; // Add the new prop here
 };
 
-export const BottomResultsPanel = ({ testResults, isAllTestsPassed, handleRunTests, handleNextChallenge }: Props) => {
+export const BottomResultsPanel = ({
+  testResults,
+  isAllTestsPassed,
+  handleRunTests,
+  handleNextChallenge,
+  isTesting,
+}: Props) => {
   return (
     <Panel>
       <div className="p-4 bg-gsn-funcoder-panel-bg border-t border-gsn-funcoder-panel-border h-full overflow-y-auto custom-scrollbar">
@@ -22,8 +29,16 @@ export const BottomResultsPanel = ({ testResults, isAllTestsPassed, handleRunTes
           <div className="flex gap-4">
             <Button
               onClick={handleRunTests}
+              disabled={isTesting} // Use isTesting to disable the button
               className="bg-gsn-funcoder-primary hover:bg-gsn-funcoder-primary-hover text-gsn-funcoder-primary-foreground font-bold">
-              Run Tests
+              {isTesting ? (
+                <span className="flex items-center">
+                  <Loader2 size={20} className="mr-2 animate-spin" />
+                  Running...
+                </span>
+              ) : (
+                'Run Tests'
+              )}
             </Button>
             <Button
               onClick={handleNextChallenge}
