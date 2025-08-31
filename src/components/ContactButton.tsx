@@ -80,7 +80,7 @@ export function FloatingContactButton() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="test@gmail.com" {...field} />
+                      <Input type="email" placeholder="user@gmail.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

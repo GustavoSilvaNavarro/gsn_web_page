@@ -59,16 +59,16 @@ export const ProfessionalSection = ({ personalInfo }: Props) => {
                   )}></div>
                 <AccordionTrigger className="flex flex-col items-start text-left hover:no-underline px-0 py-0 transition-all duration-300 ease-in-out hover:translate-x-1 hover:text-blue-700 dark:hover:text-blue-400">
                   <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-1">{job.title}</h3>
-                  <p className="text-blue-600 dark:text-blue-300 text-lg mb-2 opacity-90">
+                  <p className="text-blue-600 dark:text-blue-400 text-lg mb-2 opacity-90">
                     {job.company} | {job.dates} | {job.location}
                   </p>
                 </AccordionTrigger>
                 <AccordionContent className="pt-4 pb-0 overflow-hidden">
-                  <ul className="list-none space-y-2 text-gray-700 dark:text-gray-300">
+                  <ul className="list-none space-y-2 text-black dark:text-white">
                     {job.achievements.map((achievement, i) => (
                       <li
                         key={i}
-                        className="relative pl-6 text-gray-700 dark:text-gray-300 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-blue-600 before:rounded-full text-base">
+                        className="relative pl-6 text-black dark:text-white before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-blue-600 before:rounded-full text-base">
                         {achievement}
                       </li>
                     ))}

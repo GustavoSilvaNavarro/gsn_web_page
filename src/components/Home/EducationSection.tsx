@@ -42,7 +42,7 @@ export const EducationSection = ({ personalInfo }: Props) => {
         {personalInfo.education.map((edu, index) => (
           <motion.div
             key={index}
-            className="h-full"
+            className="h-full rounded-xl"
             variants={itemVariants}
             whileHover={{
               scale: 1.03,
@@ -52,10 +52,10 @@ export const EducationSection = ({ personalInfo }: Props) => {
             <Card className="flex flex-col h-full">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">{edu.degree}</CardTitle>
-                <CardDescription className="text-blue-600 dark:text-blue-300">{edu.institution}</CardDescription>
+                <CardDescription className="text-blue-600 dark:text-blue-400">{edu.institution}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow"></CardContent>
-              <CardFooter className="text-gray-600 dark:text-gray-400 text-sm flex justify-between items-center">
+              <CardFooter className="text-black dark:text-white text-sm flex justify-between items-center">
                 <span>{edu.dates}</span>
                 <span>{edu.location}</span>
               </CardFooter>

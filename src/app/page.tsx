@@ -14,7 +14,7 @@ import { StarsBackground } from '@/components/backgrounds/Stars';
 export default function Home() {
   return (
     <div className="min-h-screen font-sans antialiased">
-      <NavBar navType="main" />
+      <NavBar navType="main" fixedNav={true} />
 
       <main className="pt-[110px] md:pt-[100px]">
         <MainSection personalInfo={personalDetails} />
