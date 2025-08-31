@@ -1,9 +1,12 @@
 'use client';
 
+import '@/utils/monacoSetup';
 import type { Dispatch, SetStateAction } from 'react';
 import { Panel } from 'react-resizable-panels';
-import { Editor } from '@monaco-editor/react';
+import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
+
+const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
 type Props = {
   theme?: string;
