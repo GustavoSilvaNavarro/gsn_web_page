@@ -1,7 +1,8 @@
 'use client';
 
-import '@/utils/monacoSetup';
+import { setupMonacoWorkers } from '@/utils/monacoSetup';
 import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 import { Panel } from 'react-resizable-panels';
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
@@ -16,6 +17,11 @@ type Props = {
 
 export const CodeEditor = ({ userCode, setUserCode }: Props) => {
   const { theme } = useTheme();
+
+  useEffect(() => {
+    // Call the exported function here
+    setupMonacoWorkers();
+  }, []);
 
   return (
     <Panel defaultSize={75} minSize={20}>
